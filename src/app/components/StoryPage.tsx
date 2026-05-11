@@ -154,21 +154,21 @@ export default function StoryPage({ onStartTool }: StoryPageProps) {
         </div>
       </section>
 
-      <section className="border-b border-slate-200 bg-slate-950 text-white">
+      <section className="border-b border-teal-100 bg-[#eaf7f2] text-slate-900">
         <div className="mx-auto grid max-w-6xl gap-8 px-5 py-14 md:grid-cols-[0.85fr_1.15fr] md:items-center md:px-8">
-          <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+          <div className="rounded-2xl border border-teal-100 bg-white/80 p-6 shadow-sm">
             <img
               src={groundYourselfPlantArt}
               alt=""
               className="mb-5 h-28 w-full object-contain"
               loading="lazy"
             />
-            <p className="text-sm font-bold uppercase tracking-wide text-teal-200">Why naming matters</p>
+            <p className="text-sm font-bold uppercase tracking-wide text-teal-700">Why naming matters</p>
             <blockquote className="mt-4 text-3xl font-bold leading-tight md:text-4xl">
               "If you can name the fear, you can begin to face it."
             </blockquote>
           </div>
-          <div className="space-y-4 text-lg leading-8 text-slate-200">
+          <div className="space-y-4 text-lg leading-8 text-slate-700">
             <p>
               When an emotion has no name, it can feel larger than it is. It can turn into overthinking, and overthinking can make the feeling even more overwhelming.
             </p>
