@@ -54,14 +54,18 @@ function StoryMockup({ title, accent, art }: { title: string; accent: string; ar
         </div>
         <span className="text-xs font-semibold uppercase tracking-wide">Preview</span>
       </div>
-      <div className="relative space-y-4 p-5">
-        <img
-          src={art}
-          alt=""
-          className="absolute right-4 top-4 h-16 w-16 object-contain opacity-90"
-          loading="lazy"
-        />
-        <div className="h-3 w-2/3 rounded-full bg-slate-200" />
+      <div className="space-y-4 p-5">
+        <div className="flex min-h-16 items-center justify-between gap-4">
+          <div className="h-3 w-2/3 rounded-full bg-slate-200" />
+          <div className="flex h-16 w-20 shrink-0 items-center justify-center rounded-xl bg-slate-50">
+            <img
+              src={art}
+              alt=""
+              className="max-h-14 max-w-16 object-contain"
+              loading="lazy"
+            />
+          </div>
+        </div>
         <div className="grid grid-cols-2 gap-3">
           <div className={`${accent} rounded-xl px-3 py-5 text-center text-sm font-bold text-white`}>
             {title.split(',')[0]}
