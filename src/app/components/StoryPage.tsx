@@ -1,4 +1,9 @@
 import { ArrowRight, BookOpen, Brain, Heart, MessageCircle, Sparkles } from 'lucide-react';
+import abstractFlowerArt from '../../assets/emotion-art/abstract-flower.png';
+import dualEmotionDotsArt from '../../assets/emotion-art/dual-emotion-dots.png';
+import friendlyFaceArt from '../../assets/emotion-art/friendly-face.png';
+import groundYourselfPlantArt from '../../assets/emotion-art/ground-yourself-plant.png';
+import redHeartPathArt from '../../assets/emotion-art/red-heart-path.png';
 
 interface StoryPageProps {
   onStartTool: () => void;
@@ -6,11 +11,12 @@ interface StoryPageProps {
 
 const storySteps = [
   {
-    label: 'Start familiar',
+    label: 'Start Familiar',
     title: 'Begin with good or bad',
     body: 'The tool starts where everyday conversation often starts. Sometimes all we know is that something feels good, bad, off, or not okay.',
     accent: 'bg-teal-600',
     mock: 'Good / Bad',
+    art: friendlyFaceArt,
   },
   {
     label: 'Find language',
@@ -18,6 +24,7 @@ const storySteps = [
     body: 'Broad categories help narrow the field before the tool offers more specific words. The goal is not perfection; it is recognition.',
     accent: 'bg-coral-500',
     mock: 'Calm, worried, hopeful',
+    art: dualEmotionDotsArt,
   },
   {
     label: 'Connect needs',
@@ -25,6 +32,7 @@ const storySteps = [
     body: 'Inspired by NVC, the tool connects feelings with needs that may be met or unmet, turning emotion into something easier to understand.',
     accent: 'bg-amber-500',
     mock: 'Connection, rest, clarity',
+    art: groundYourselfPlantArt,
   },
   {
     label: 'Share gently',
@@ -32,10 +40,11 @@ const storySteps = [
     body: 'The share output helps someone communicate what they are feeling without having to write from a blank page.',
     accent: 'bg-sky-600',
     mock: 'My Emotional Journey',
+    art: redHeartPathArt,
   },
 ];
 
-function StoryMockup({ title, accent }: { title: string; accent: string }) {
+function StoryMockup({ title, accent, art }: { title: string; accent: string; art: string }) {
   return (
     <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-lg">
       <div className={`${accent} flex h-20 items-center justify-between px-5 text-white`}>
@@ -45,7 +54,13 @@ function StoryMockup({ title, accent }: { title: string; accent: string }) {
         </div>
         <span className="text-xs font-semibold uppercase tracking-wide">Preview</span>
       </div>
-      <div className="space-y-4 p-5">
+      <div className="relative space-y-4 p-5">
+        <img
+          src={art}
+          alt=""
+          className="absolute right-4 top-4 h-16 w-16 object-contain opacity-90"
+          loading="lazy"
+        />
         <div className="h-3 w-2/3 rounded-full bg-slate-200" />
         <div className="grid grid-cols-2 gap-3">
           <div className={`${accent} rounded-xl px-3 py-5 text-center text-sm font-bold text-white`}>
@@ -110,6 +125,13 @@ export default function StoryPage({ onStartTool }: StoryPageProps) {
           <div className="relative">
             <div className="absolute -left-4 top-8 hidden h-32 w-3 bg-coral-500 md:block" />
             <div className="space-y-4 rounded-2xl border border-slate-200 bg-[#fffaf0] p-5 shadow-xl">
+              <div className="flex justify-end">
+                <img
+                  src={friendlyFaceArt}
+                  alt="Hand-drawn smiling face"
+                  className="h-24 w-24 rounded-full bg-amber-100 object-contain p-2"
+                />
+              </div>
               <div className="rounded-xl bg-white p-5 shadow-sm">
                 <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">The first question</p>
                 <p className="mt-3 text-3xl font-bold text-slate-950">How are you feeling right now?</p>
@@ -131,6 +153,12 @@ export default function StoryPage({ onStartTool }: StoryPageProps) {
       <section className="border-b border-slate-200 bg-slate-950 text-white">
         <div className="mx-auto grid max-w-6xl gap-8 px-5 py-14 md:grid-cols-[0.85fr_1.15fr] md:items-center md:px-8">
           <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+            <img
+              src={groundYourselfPlantArt}
+              alt=""
+              className="mb-5 h-28 w-full object-contain"
+              loading="lazy"
+            />
             <p className="text-sm font-bold uppercase tracking-wide text-teal-200">Why naming matters</p>
             <blockquote className="mt-4 text-3xl font-bold leading-tight md:text-4xl">
               "If you can name the fear, you can begin to face it."
@@ -164,7 +192,7 @@ export default function StoryPage({ onStartTool }: StoryPageProps) {
                 <h3 className="mt-2 text-2xl font-bold text-slate-950">{step.title}</h3>
                 <p className="mt-3 leading-7 text-slate-600">{step.body}</p>
               </div>
-              <StoryMockup title={step.mock} accent={step.accent} />
+              <StoryMockup title={step.mock} accent={step.accent} art={step.art} />
             </article>
           ))}
         </div>
@@ -172,7 +200,14 @@ export default function StoryPage({ onStartTool }: StoryPageProps) {
 
       <section className="border-t border-slate-200 bg-white">
         <div className="mx-auto flex max-w-6xl flex-col gap-6 px-5 py-12 md:flex-row md:items-center md:justify-between md:px-8">
-          <div className="max-w-2xl">
+          <div className="flex max-w-2xl gap-4">
+            <img
+              src={abstractFlowerArt}
+              alt=""
+              className="hidden h-24 w-24 shrink-0 object-contain sm:block"
+              loading="lazy"
+            />
+            <div>
             <div className="mb-3 flex items-center gap-2 text-teal-700">
               <MessageCircle className="h-5 w-5" />
               <span className="font-bold">The sharing piece matters</span>
@@ -180,6 +215,7 @@ export default function StoryPage({ onStartTool }: StoryPageProps) {
             <p className="text-xl leading-8 text-slate-700">
               The output is designed to help someone say, "This is what I am feeling, and this might be why," without starting from a blank page.
             </p>
+            </div>
           </div>
           <button
             onClick={onStartTool}
