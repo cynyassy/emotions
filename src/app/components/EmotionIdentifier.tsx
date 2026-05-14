@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, RotateCcw, Heart, Brain } from 'lucide-react';
 import { goodEmotions, badEmotions, initialGoodCategories, initialBadCategories } from '../data/emotions';
+import { getEmotionDefinition } from '../data/emotionDefinitions';
 import { universalNeeds } from '../data/needs';
 import HelpTooltip from './HelpTooltip';
 import SocialShare from './SocialShare';
@@ -380,7 +381,7 @@ export default function EmotionIdentifier() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 gap-2 mb-4 max-h-[300px] overflow-y-auto pr-2">
+        <div className="grid grid-cols-1 gap-3 mb-4 max-h-[340px] overflow-y-auto pr-2 sm:grid-cols-2">
           {specificEmotions.map((emotion) => {
             const isSelected = selection.specificEmotions.includes(emotion);
             
@@ -388,13 +389,18 @@ export default function EmotionIdentifier() {
               <button
                 key={emotion}
                 onClick={() => handleSpecificEmotionSelection(emotion)}
-                className={`h-14 px-4 rounded-lg font-['Josefin_Sans:Regular',_sans-serif] text-white text-base font-medium transition-all duration-200 hover:scale-105 capitalize ${
+                className={`min-h-24 rounded-xl px-4 py-3 text-left font-['Josefin_Sans:Regular',_sans-serif] text-white transition-all duration-200 hover:scale-[1.02] ${
                   isSelected 
                     ? 'bg-gradient-to-br from-slate-700 to-slate-800 ring-4 ring-teal-400 shadow-xl' 
                     : `bg-gradient-to-br ${feelingBg} hover:shadow-md`
                 }`}
               >
-                {emotion}
+                <span className="block text-lg font-bold capitalize leading-tight">
+                  {emotion}
+                </span>
+                <span className="mt-1 block text-sm font-medium leading-5 text-white/90">
+                  {getEmotionDefinition(emotion)}
+                </span>
               </button>
             );
           })}

@@ -34,6 +34,8 @@ Long lists should be broken into smaller choices.
 
 For needs, show broad categories first. After a user chooses a category, reveal the more specific needs inside that category. This reduces overwhelm and makes the interaction feel more exploratory.
 
+Specific emotion words should include one-line definitions directly below the word. Feedback showed that some people do not know the meaning of the more nuanced vocabulary, so the choice card should teach the word at the moment of selection. These cards should be left-aligned for readability.
+
 The same pattern may later apply more strongly to emotion selection:
 
 1. Start with good or bad.
@@ -47,3 +49,7 @@ The same pattern may later apply more strongly to emotion selection:
 The writing should be direct, human, and lightly personal. It should not over-explain, pathologize, or sound clinical.
 
 The story can acknowledge difficulty while keeping the product hopeful and useful.
+
+## Sharing Metadata
+
+The GitHub Pages version should include a dedicated 1200x630 OG image so LinkedIn, WhatsApp, and other link previews show the tool clearly.

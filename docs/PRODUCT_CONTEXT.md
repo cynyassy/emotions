@@ -49,6 +49,12 @@ Users should be able to skip the explanation and open the tool directly.
 ## Current Product Risks
 
 - Long lists of emotions and needs can feel overwhelming.
-- The current interface is useful but not yet visually rich enough.
-- The story behind the tool is not visible inside the product yet.
+- Nuanced words can become a barrier when users do not know what they mean.
+- The interface is useful but should keep becoming more visually rich.
 - Screenshots and sharing are important because the tool is meant to support communication with others.
+
+## Recent Product Decisions
+
+- Emotion word buttons now include a one-line definition below the word.
+- The story page hero mockup acts as a direct CTA into the tool because it visually reads as clickable.
+- The site includes OG metadata and a 1200x630 social preview image for link sharing.

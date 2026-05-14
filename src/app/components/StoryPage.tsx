@@ -128,7 +128,12 @@ export default function StoryPage({ onStartTool }: StoryPageProps) {
 
           <div className="relative">
             <div className="absolute -left-4 top-8 hidden h-32 w-3 bg-coral-500 md:block" />
-            <div className="space-y-4 rounded-2xl border border-slate-200 bg-[#fffaf0] p-5 shadow-xl">
+            <button
+              type="button"
+              onClick={onStartTool}
+              aria-label="Open the Emotion Identifier tool"
+              className="group block w-full space-y-4 rounded-2xl border border-slate-200 bg-[#fffaf0] p-5 text-left shadow-xl transition hover:-translate-y-1 hover:border-teal-300 hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-teal-200"
+            >
               <div className="flex justify-end">
                 <img
                   src={friendlyFaceArt}
@@ -149,7 +154,11 @@ export default function StoryPage({ onStartTool }: StoryPageProps) {
                 <div className="rounded-lg bg-white p-3">Connect</div>
                 <div className="rounded-lg bg-white p-3">Share</div>
               </div>
-            </div>
+              <div className="inline-flex items-center gap-2 rounded-lg bg-teal-700 px-4 py-3 font-semibold text-white transition group-hover:bg-teal-800">
+                Open the tool
+                <ArrowRight className="h-5 w-5" />
+              </div>
+            </button>
           </div>
         </div>
       </section>
