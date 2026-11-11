@@ -1,3 +1,5 @@
+import emotionStart from '../../assets/emotion-walkthrough/start.webp';
+import emotionSpecific from '../../assets/emotion-walkthrough/specific.webp';
 import { ArrowRight, BookOpen, Brain, Heart, MessageCircle, Sparkles } from 'lucide-react';
 import abstractFlowerArt from '../../assets/emotion-art/abstract-flower.png';
 import dualEmotionDotsArt from '../../assets/emotion-art/dual-emotion-dots.png';
@@ -208,6 +210,15 @@ export default function StoryPage({ onStartTool }: StoryPageProps) {
               <StoryMockup title={step.mock} accent={step.accent} art={step.art} />
             </article>
           ))}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-5 py-12 md:px-8" aria-labelledby="actual-screens-title">
+        <h2 id="actual-screens-title" className="text-3xl font-bold text-slate-950">From a familiar word to something more specific.</h2>
+        <p className="mt-4 max-w-2xl leading-7 text-slate-700">These screens show a sample journey through the tool: Good → Hopeful → Encouraged.</p>
+        <div className="mt-8 grid max-w-2xl grid-cols-2 gap-4 md:gap-8">
+          <figure><img src={emotionStart} width="390" height="844" alt="The first step asks how you feel, with Good and Bad choices" loading="lazy" className="h-auto w-full rounded-lg border border-slate-200" /><figcaption className="mt-3 text-sm text-slate-700">Start with a familiar word</figcaption></figure>
+          <figure><img src={emotionSpecific} width="390" height="844" alt="After Good and Hopeful, Encouraged is selected with a definition: Feeling supported and more hopeful" loading="lazy" className="h-auto w-full rounded-lg border border-slate-200" /><figcaption className="mt-3 text-sm text-slate-700">Find a more specific feeling</figcaption></figure>
         </div>
       </section>
 
